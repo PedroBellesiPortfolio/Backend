@@ -31,7 +31,7 @@ public class Skills implements Serializable{
     private int porcentaje;
     private int orden_skill;
     
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Idusuario")
     private Usuario usuariosk;     
       

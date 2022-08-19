@@ -38,7 +38,7 @@ public class Educacion implements Serializable {
    private Date fecha_finalizacion_titulo;
    private int orden_titulo;
     
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Idusuario")
     private Usuario usuarioed;   
 

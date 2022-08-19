@@ -37,7 +37,7 @@ public class Experiencia implements Serializable{
     private int year_cierre;
     private int orden_experiencia;
     
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Idusuario")
     private Usuario usuarioex;     
    

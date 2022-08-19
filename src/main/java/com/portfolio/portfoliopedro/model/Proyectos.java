@@ -37,7 +37,7 @@ public class Proyectos implements Serializable{
     private int year_proyecto;
     private int orden_proyectos;
     
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Idusuario")
     private Usuario usuariopr;  
   
