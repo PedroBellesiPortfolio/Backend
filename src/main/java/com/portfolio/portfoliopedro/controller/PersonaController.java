@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,6 +26,12 @@ public class PersonaController {
     @CrossOrigin(origins = "*")
     @PostMapping("/persona/mas")
     public void agregarpersona (@RequestBody Persona per){
+    perServi.crearModificarPersona(per);
+    }
+    
+    @CrossOrigin(origins = "*")
+    @PutMapping("/persona/edita")
+    public void editapersona (@RequestBody Persona per){
     perServi.crearModificarPersona(per);
     }
     

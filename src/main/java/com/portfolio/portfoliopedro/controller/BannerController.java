@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +28,12 @@ public class BannerController {
     @CrossOrigin(origins = "*")
     @PostMapping("/banner/mas")
     public void modificaunbanner (@RequestBody Banner ban){
+    barServi.modificarBanner (ban);
+    }
+    
+    @CrossOrigin(origins = "*")
+    @PutMapping("/banner/edita")
+    public void editaunbanner (@RequestBody Banner ban){
     barServi.modificarBanner (ban);
     }
     
