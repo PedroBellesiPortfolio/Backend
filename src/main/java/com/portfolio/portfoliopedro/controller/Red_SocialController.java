@@ -23,26 +23,26 @@ public class Red_SocialController {
     @Autowired
     private redes_socialesservice redServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/redsocial/mas")
     public void modificaunared (@RequestBody Redes_sociales red){
     redServi.crearModificarRedSocial (red);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/redsocial/edita")
     public void editaunared (@RequestBody Redes_sociales red){
     redServi.crearModificarRedSocial (red);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/redsocial/ver")  
     @ResponseBody
     public List<Redes_sociales> listared(){
     return redServi.verRedSocial();
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @DeleteMapping("/redsocial/borra")  
     public void borrarunred (@RequestBody Redes_sociales red){
     redServi.borrarRedSocial(red);

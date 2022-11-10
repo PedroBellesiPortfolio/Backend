@@ -29,14 +29,14 @@ public class PersonaController {
     perServi.crearModificarPersona(per);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/persona/edita")
     public void editapersona (@RequestBody Persona per){
     perServi.crearModificarPersona(per);
     }
     
    // @CrossOrigin(origins = "http://localhost:4200")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/persona/ver")  
     @ResponseBody
     public List<Persona> listapersona(){

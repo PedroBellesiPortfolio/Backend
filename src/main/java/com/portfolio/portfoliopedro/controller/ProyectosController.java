@@ -23,26 +23,26 @@ public class ProyectosController {
       @Autowired
     private Iproyectosservice proServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/proyectos/mas")
     public void agregapro (@RequestBody Proyectos exp){
     proServi.crearModificarProyectos(exp);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/proyectos/edita")
     public void editapro (@RequestBody Proyectos exp){
     proServi.crearModificarProyectos(exp);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/proyectos/ver")  
     @ResponseBody
     public List<Proyectos> listapro(){
     return proServi.verProyectos();
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @DeleteMapping("/proyectos/borra/{idspro1}")  
     public void borrarunpro (@PathVariable Long idspro1){
     proServi.borrarProyectos(idspro1);

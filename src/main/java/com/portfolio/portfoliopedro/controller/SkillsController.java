@@ -23,26 +23,26 @@ public class SkillsController {
     @Autowired
     private Iskillservice skServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/skill/mas")
     public void agregask (@RequestBody Skills sk){
     skServi.crearModificarSkills(sk);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/skill/edita")
     public void editask (@RequestBody Skills sk){
     skServi.crearModificarSkills(sk);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/skill/ver")  
     @ResponseBody
     public List<Skills> listaexp(){
     return skServi.verSkills();
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @DeleteMapping("/skill/borra/{idskills1}")  
     public void borrarunsk (@PathVariable Long idskills1){
     skServi.borrarSkills(idskills1);

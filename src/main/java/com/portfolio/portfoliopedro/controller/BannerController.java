@@ -25,19 +25,22 @@ public class BannerController {
     @Autowired
     private Bannerservice barServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/banner/mas")
     public void modificaunbanner (@RequestBody Banner ban){
     barServi.modificarBanner (ban);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/banner/edita")
     public void editaunbanner (@RequestBody Banner ban){
     barServi.modificarBanner (ban);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/banner/ver")  
     @ResponseBody
     public List<Banner> listapersona(){

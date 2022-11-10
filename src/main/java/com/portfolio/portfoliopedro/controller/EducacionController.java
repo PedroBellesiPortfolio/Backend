@@ -23,26 +23,30 @@ public class EducacionController {
     @Autowired
     private Ieducacionservice eduServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/educacion/mas")
     public void agregareducacion (@RequestBody Educacion edu){
     eduServi.crearModificarEducacion(edu);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/educacion/edita")
     public void editaeducacion (@RequestBody Educacion edu){
     eduServi.crearModificarEducacion(edu);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/educacion/ver")  
     @ResponseBody
     public List<Educacion> listaeducacion(){
     return eduServi.verEducacion();
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = 
+{"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @DeleteMapping("/educacion/borra/{idsedu1}")  
     public void borrarunaeducacion (@PathVariable Long idsedu1){
     eduServi.borrarEducacion(idsedu1);

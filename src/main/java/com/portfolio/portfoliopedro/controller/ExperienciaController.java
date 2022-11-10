@@ -23,26 +23,26 @@ public class ExperienciaController {
     @Autowired
     private Iexperienciaservice expServi;
    
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PostMapping("/experiencia/mas")
     public void agregaexp (@RequestBody Experiencia exp){
     expServi.crearModificarExperiencia(exp);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @PutMapping("/experiencia/edita")
     public void editaexp (@RequestBody Experiencia exp){
     expServi.crearModificarExperiencia(exp);
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @GetMapping("/experiencia/ver")  
     @ResponseBody
     public List<Experiencia> listaexp(){
     return expServi.verExperiencia();
     }
     
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
     @DeleteMapping("/experiencia/borra/{idsex1}")  
     public void borrarunaexp (@PathVariable Long idsex1){
     expServi.borrarExperiencia(idsex1);
