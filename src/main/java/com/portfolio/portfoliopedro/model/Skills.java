@@ -33,7 +33,6 @@ public class Skills implements Serializable{
     private int orden_skill;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JsonManagedReference 
     @JoinColumn(name="Idusuario",referencedColumnName="Idusuario")
     private Usuario usuariosk;     
       

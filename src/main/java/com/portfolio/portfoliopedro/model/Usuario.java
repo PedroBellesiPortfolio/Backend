@@ -54,7 +54,6 @@ public class Usuario implements Serializable {
    private List<Proyectos> Prolist;
     
    @OneToMany(mappedBy="usuariosk",cascade= CascadeType.ALL,fetch = FetchType.LAZY)
-   @JsonManagedReference 
    @JsonIgnore
    private List<Skills> Sklist;
    
