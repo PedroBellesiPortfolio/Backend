@@ -33,7 +33,7 @@ public class Skills implements Serializable{
     private int orden_skill;
     
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Idusuario")
     private Usuario usuariosk;     
       
