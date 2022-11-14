@@ -38,7 +38,7 @@ public class SkillsController {
     
    
     @PutMapping("/skill/edita/{ids1}")
-    public Skills editask (@PathVariable Long ids1,@RequestPart ("skill") String nuevoskill){
+    public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) throws Exception{
   //    public Skills editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill){
         Skills updates = skrepo.findById(ids1).orElse(null);
    //    updates.setSkill(nuevoskill.getSkill());
