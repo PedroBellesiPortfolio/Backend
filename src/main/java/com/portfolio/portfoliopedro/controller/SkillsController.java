@@ -30,6 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SkillsController {
     @Autowired
     public Skillsrepo skrepo;
+    
+    @Autowired
     private Iskillservice skServi;
     
    
