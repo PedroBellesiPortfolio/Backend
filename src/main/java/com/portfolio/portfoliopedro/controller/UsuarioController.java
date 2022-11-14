@@ -18,12 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins ={"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
 public class UsuarioController {
  
     @Autowired
     private Usuariorepo usurep;
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+    
     @GetMapping("/usuario/ver")  
     @ResponseBody
     public List<Usuario> listausuario(){

@@ -3,6 +3,7 @@ package com.portfolio.portfoliopedro.controller;
 
 
 import com.portfolio.portfoliopedro.model.Skills;
+import com.portfolio.portfoliopedro.repository.Skillsrepo;
 import com.portfolio.portfoliopedro.service.Iskillservice;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +20,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins ={"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
 public class SkillsController {
     @Autowired
     private Iskillservice skServi;
+    public Skillsrepo skrepo;
    
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+   
     @PostMapping("/skill/mas")
     public void agregask (@RequestBody Skills sk){
     skServi.crearModificarSkills(sk);
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
-    @PutMapping("/skill/edita")
-    public void editask (@RequestBody Skills sk){
-    skServi.crearModificarSkills(sk);
+   
+    @PutMapping("/skill/edita/{ids1}")
+    public Skills editask (@PathVariable Long ids1,@RequestBody Skills sk){
+        Skills updates = skrepo.findById(ids1).orElse(null);
+        updates.setSkill(sk.getSkill());
+        updates.setPorcentaje(sk.getPorcentaje());
+        updates.setOrden_skill(sk.getOrden_skill());
+        updates.setUsuariosk(sk.getUsuariosk());
+    skServi.crearModificarSkills(updates);
+    return updates;
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+    
     @GetMapping("/skill/ver")  
     @ResponseBody
     public List<Skills> listaexp(){
     return skServi.verSkills();
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+    
     @DeleteMapping("/skill/borra/{idskills1}")  
     public void borrarunsk (@PathVariable Long idskills1){
     skServi.borrarSkills(idskills1);

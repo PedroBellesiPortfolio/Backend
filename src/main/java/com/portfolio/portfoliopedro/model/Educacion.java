@@ -54,7 +54,7 @@ public class Educacion implements Serializable {
         this.orden_titulo = orden_titulo;
         this.usuarioed = usuarioed;
     }
-    
+
 
    
 

@@ -3,6 +3,7 @@ package com.portfolio.portfoliopedro.controller;
 
 
 import com.portfolio.portfoliopedro.model.Proyectos;
+import com.portfolio.portfoliopedro.repository.Proyectosrepo;
 import com.portfolio.portfoliopedro.service.Iproyectosservice;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +20,42 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins ={"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
 public class ProyectosController {
       @Autowired
     private Iproyectosservice proServi;
+    public Proyectosrepo proyerepo;
    
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+  
     @PostMapping("/proyectos/mas")
     public void agregapro (@RequestBody Proyectos exp){
     proServi.crearModificarProyectos(exp);
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
-    @PutMapping("/proyectos/edita")
-    public void editapro (@RequestBody Proyectos exp){
-    proServi.crearModificarProyectos(exp);
+  
+    @PutMapping("/proyectos/edita/{idp1}")
+    public Proyectos editapro (@PathVariable Long idp1,@RequestBody Proyectos exp){
+        Proyectos updatepr = proyerepo.findById(idp1).orElse(null);
+        updatepr.setTitulo_proyecto(exp.getTitulo_proyecto());
+        updatepr.setLink_proyecto(exp.getLink_proyecto());
+        updatepr.setFoto_proyecto(exp.getFoto_proyecto());
+        updatepr.setDescripcion_proyecto(exp.getDescripcion_proyecto());
+        updatepr.setTecnologias(exp.getTecnologias());
+        updatepr.setYear_proyecto(exp.getYear_proyecto());
+        updatepr.setOrden_proyectos(exp.getOrden_proyectos());
+        updatepr.setUsuariopr(exp.getUsuariopr());
+    proServi.crearModificarProyectos(updatepr);
+    return updatepr;
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+   
     @GetMapping("/proyectos/ver")  
     @ResponseBody
     public List<Proyectos> listapro(){
     return proServi.verProyectos();
     }
     
-    @CrossOrigin(origins = {"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
+  
     @DeleteMapping("/proyectos/borra/{idspro1}")  
     public void borrarunpro (@PathVariable Long idspro1){
     proServi.borrarProyectos(idspro1);
