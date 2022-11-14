@@ -32,8 +32,8 @@ public class Skills implements Serializable{
     private int porcentaje;
     private int orden_skill;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Idusuario",referencedColumnName="Idusuario")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="Idusuario")
     private Usuario usuariosk;     
       
     
