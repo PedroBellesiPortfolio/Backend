@@ -6,8 +6,10 @@ import com.portfolio.portfoliopedro.model.Skills;
 import com.portfolio.portfoliopedro.repository.Skillsrepo;
 import com.portfolio.portfoliopedro.service.Iskillservice;
 import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,16 +41,23 @@ public class SkillsController {
    
     @PutMapping("/skill/edita/{ids1}")
    // public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) {
-     public void editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill) {
+     public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill) {
          
-     Skills upita= skrepo.findById(ids1).orElse(null);
+     Optional<Skills> upita= skrepo.findById(ids1);
     
    //    updates.setSkill(nuevoskill.getSkill());
    //    updates.setPorcentaje(nuevoskill.getPorcentaje());
        
-   //  skrepo.save(updates);  
+   //  .save(updates);  
    // skServi.crearModificarSkills(updates);
-    return ResponseEntity.ok(upita);
+   //return upita;
+   if (upita.isPresent()) {
+      
+      return new ResponseEntity<>(skrepo.save(nuevoskill), HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
     }
     
     
