@@ -2,6 +2,7 @@
 package com.portfolio.portfoliopedro.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +32,8 @@ public class Skills implements Serializable{
     private int porcentaje;
     private int orden_skill;
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
+    @JsonManagedReference 
     @JoinColumn(name="Idusuario")
     private Usuario usuariosk;     
       
