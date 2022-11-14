@@ -39,7 +39,7 @@ public class SkillsController {
    
     @PutMapping("/skill/edita/{ids1}")
    // public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) {
-     public Skills editask (@PathVariable Long ids1,@RequestBody @Valid Skills nuevoskill) {
+     public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestBody @Valid Skills nuevoskill) {
          
      Skills upita= skrepo.findById(ids1).orElse(nuevoskill);
     
@@ -48,7 +48,7 @@ public class SkillsController {
        
    //  skrepo.save(updates);  
    // skServi.crearModificarSkills(updates);
-    return upita;
+    return ResponseEntity.ok(upita);
     }
     
     
