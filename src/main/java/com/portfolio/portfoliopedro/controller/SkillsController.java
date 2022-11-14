@@ -39,9 +39,9 @@ public class SkillsController {
     }
     
    
-    @PutMapping("/skill/edita/{id}")
+    @PutMapping("/skill/edita/{idskills}")
    // public Skills editask (@PathVariable("id") Long id,@RequestParam ("skill") String nuevoskill) {
-     public ResponseEntity<Skills> editask (@PathVariable("id") Long idskills,@RequestBody Skills nuevoskill) {
+     public ResponseEntity<Skills> editask (@PathVariable("idskills") Long idskills,@RequestBody Skills nuevoskill) {
          
      Optional<Skills> upita= skrepo.findById(idskills);
     
