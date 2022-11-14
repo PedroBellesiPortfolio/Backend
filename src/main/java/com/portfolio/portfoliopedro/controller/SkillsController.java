@@ -7,6 +7,7 @@ import com.portfolio.portfoliopedro.repository.Skillsrepo;
 import com.portfolio.portfoliopedro.service.Iskillservice;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,14 +35,14 @@ public class SkillsController {
     
    
     @PutMapping("/skill/edita/{ids1}")
-    public Skills editask (@PathVariable Long ids1,@RequestBody Skills sk){
+    public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestBody Skills sk){
         Skills updates = skrepo.findById(ids1).orElse(null);
         updates.setSkill(sk.getSkill());
         updates.setPorcentaje(sk.getPorcentaje());
         updates.setOrden_skill(sk.getOrden_skill());
         
     skServi.crearModificarSkills(updates);
-    return updates;
+    return ResponseEntity.ok(updates);
     }
     
     
