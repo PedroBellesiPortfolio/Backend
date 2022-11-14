@@ -58,7 +58,7 @@ public class SkillsController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
   }
-    }
+    
     
     
     @GetMapping("/skill/ver")  
