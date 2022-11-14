@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,10 +37,10 @@ public class SkillsController {
     
    
     @PutMapping("/skill/edita/{ids1}")
-    public ResponseEntity<Skills> editask (@PathVariable Long ids1,@Valid @RequestBody Skills sk){
+    public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestParam("skill") String nuevoskill){
         Skills updates = skrepo.findById(ids1).orElse(null);
-        updates.setSkill(sk.getSkill());
-        updates.setPorcentaje(sk.getPorcentaje());
+        updates.setSkill(nuevoskill);
+     //   updates.setPorcentaje(sk.getPorcentaje());
        
         
     skServi.crearModificarSkills(updates);
