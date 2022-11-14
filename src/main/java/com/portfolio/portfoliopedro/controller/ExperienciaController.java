@@ -34,7 +34,7 @@ public class ExperienciaController {
     }
     
   
-    @PutMapping("/experiencia/edita{idexp1}")
+    @PutMapping("/experiencia/edita/{idexp1}")
     public Experiencia editaexp (@PathVariable Long idexp1,@RequestBody Experiencia exp){
         Experiencia updateexp = exprepo.findById(idexp1).orElse(null);
         updateexp.setTitulo_puesto(exp.getTitulo_puesto());
