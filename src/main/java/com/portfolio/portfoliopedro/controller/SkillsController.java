@@ -40,8 +40,8 @@ public class SkillsController {
   //  public Skills editask (@PathVariable Long ids1,@RequestParam("skill") String nuevoskill){
       public Skills editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill){
         Skills updates = skrepo.findById(ids1).orElse(null);
-        updates.setSkill(nuevoskill.getSkill());
-        updates.setPorcentaje(nuevoskill.getPorcentaje());
+    //    updates.setSkill(nuevoskill.getSkill());
+    //    updates.setPorcentaje(nuevoskill.getPorcentaje());
        
         
     skServi.crearModificarSkills(updates);
