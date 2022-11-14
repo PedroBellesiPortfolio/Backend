@@ -41,7 +41,7 @@ public class SkillsController {
    // public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) {
      public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestBody @Valid Skills nuevoskill) {
          
-     Skills upita= skrepo.findById(ids1).orElse(null);
+     Skills upita= skrepo.findById(ids1).get();
     
    //    updates.setSkill(nuevoskill.getSkill());
    //    updates.setPorcentaje(nuevoskill.getPorcentaje());
