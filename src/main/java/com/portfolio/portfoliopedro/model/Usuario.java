@@ -52,7 +52,8 @@ public class Usuario implements Serializable {
    @OneToMany(mappedBy="usuariopr",cascade= CascadeType.ALL,fetch = FetchType.LAZY)
    @JsonIgnore
    private List<Proyectos> Prolist;
-    
+   
+   
    @OneToMany(mappedBy="usuariosk",cascade= CascadeType.ALL,fetch = FetchType.LAZY)
    @JsonIgnore
    private List<Skills> Sklist;

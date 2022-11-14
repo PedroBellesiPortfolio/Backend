@@ -32,7 +32,7 @@ public class Skills implements Serializable{
     private int porcentaje;
     private int orden_skill;
     
-    @JsonManagedReference
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="Idusuario")
     private Usuario usuariosk;     
