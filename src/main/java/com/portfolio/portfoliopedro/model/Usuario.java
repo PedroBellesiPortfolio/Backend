@@ -2,6 +2,7 @@
 package com.portfolio.portfoliopedro.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,7 @@ public class Usuario implements Serializable {
    private List<Proyectos> Prolist;
     
    @OneToMany(mappedBy="usuariosk",cascade= CascadeType.ALL,fetch = FetchType.EAGER)
+   @JsonManagedReference 
    @JsonIgnore
    private List<Skills> Sklist;
    
