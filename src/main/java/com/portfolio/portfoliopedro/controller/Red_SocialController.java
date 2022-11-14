@@ -25,6 +25,7 @@ public class Red_SocialController {
     
     @Autowired
     private redes_socialesservice redServi;
+    @Autowired
     public Redes_socialesrepo redrepo;
    
   

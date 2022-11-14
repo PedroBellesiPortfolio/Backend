@@ -25,6 +25,7 @@ public class PersonaController {
  
     @Autowired
     private Ipersonaservice perServi;
+    @Autowired
     public Personarepo persoRepo;
    
    

@@ -25,6 +25,7 @@ public class BannerController {
  
     @Autowired
     private Bannerservice barServi;
+    @Autowired
     public Bannerrepo banrepo;
    
 

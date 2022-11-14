@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProyectosController {
       @Autowired
     private Iproyectosservice proServi;
+      @Autowired
     public Proyectosrepo proyerepo;
    
   

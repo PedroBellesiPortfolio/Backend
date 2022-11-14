@@ -24,6 +24,7 @@ public class ExperienciaController {
     
     @Autowired
     private Iexperienciaservice expServi;
+    @Autowired
     public Experienciarepo exprepo;
    
  

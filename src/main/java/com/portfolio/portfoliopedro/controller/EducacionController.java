@@ -26,6 +26,7 @@ public class EducacionController {
     
     @Autowired
     private Ieducacionservice eduServi;
+    @Autowired
     public Educacionrepo edurepo;
    
  
