@@ -39,7 +39,7 @@ public class SkillsController {
         Skills updates = skrepo.findById(ids1).orElse(null);
         updates.setSkill(sk.getSkill());
         updates.setPorcentaje(sk.getPorcentaje());
-        updates.setOrden_skill(sk.getOrden_skill());
+       
         
     skServi.crearModificarSkills(updates);
     return ResponseEntity.ok(updates);
