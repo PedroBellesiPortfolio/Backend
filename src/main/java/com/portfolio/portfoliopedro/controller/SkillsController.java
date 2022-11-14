@@ -37,14 +37,14 @@ public class SkillsController {
     
    
     @PutMapping("/skill/edita/{ids1}")
-    public ResponseEntity<Skills> editask (@PathVariable Long ids1,@RequestParam("skill") String nuevoskill){
+    public Skills editask (@PathVariable Long ids1,@RequestParam("skill") String nuevoskill){
         Skills updates = skrepo.findById(ids1).orElse(null);
         updates.setSkill(nuevoskill);
      //   updates.setPorcentaje(sk.getPorcentaje());
        
         
     skServi.crearModificarSkills(updates);
-    return ResponseEntity.ok(updates);
+    return updates;
     }
     
     
