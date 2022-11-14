@@ -38,9 +38,10 @@ public class SkillsController {
     
    
     @PutMapping("/skill/edita/{ids1}")
-    public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) {
-    // public Skills editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill) {
-        Skills upita= skrepo.findById(ids1).get();
+   // public Skills editask (@PathVariable Long ids1,@RequestParam ("skill") String nuevoskill) {
+     public Skills editask (@PathVariable Long ids1,@RequestBody Skills nuevoskill) {
+    //    Skills upita= skrepo.findById(ids1).orElse(null);
+    Skills upita= null;
    //    updates.setSkill(nuevoskill.getSkill());
    //    updates.setPorcentaje(nuevoskill.getPorcentaje());
        
