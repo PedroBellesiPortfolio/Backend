@@ -43,7 +43,7 @@ public class ProyectosController {
         updatepr.setTecnologias(exp.getTecnologias());
         updatepr.setYear_proyecto(exp.getYear_proyecto());
         updatepr.setOrden_proyectos(exp.getOrden_proyectos());
-        updatepr.setUsuariopr(exp.getUsuariopr());
+        
     proServi.crearModificarProyectos(updatepr);
     return updatepr;
     }

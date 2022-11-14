@@ -39,7 +39,7 @@ public class SkillsController {
         updates.setSkill(sk.getSkill());
         updates.setPorcentaje(sk.getPorcentaje());
         updates.setOrden_skill(sk.getOrden_skill());
-        updates.setUsuariosk(sk.getUsuariosk());
+        
     skServi.crearModificarSkills(updates);
     return updates;
     }

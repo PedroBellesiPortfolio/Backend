@@ -43,7 +43,7 @@ public class ExperienciaController {
         updateexp.setYear_inicio(exp.getYear_inicio());
         updateexp.setYear_cierre(exp.getYear_cierre());
         updateexp.setOrden_experiencia(exp.getOrden_experiencia());
-        updateexp.setUsuarioex(exp.getUsuarioex());
+       
     expServi.crearModificarExperiencia(updateexp);
     return updateexp;
     }

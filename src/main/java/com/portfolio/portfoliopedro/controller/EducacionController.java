@@ -44,7 +44,7 @@ public class EducacionController {
         updateedu.setCompletado(edudetalle.getCompletado());
         updateedu.setFecha_finalizacion_titulo(edudetalle.getFecha_finalizacion_titulo());
         updateedu.setOrden_titulo(edudetalle.getOrden_titulo());
-        updateedu.setUsuarioed(edudetalle.getUsuarioed());
+        
     eduServi.crearModificarEducacion(updateedu);
     return updateedu;
     }
