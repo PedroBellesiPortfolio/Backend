@@ -29,8 +29,9 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins ={"http//localhost:4200","https://portfoliopedrobellesi.web.app","https://portfoliopedrobellesi.firebaseapp.com"})
 public class SkillsController {
     @Autowired
-    private Iskillservice skServi;
     public Skillsrepo skrepo;
+    private Iskillservice skServi;
+    
    
    
     @PostMapping("/skill/mas")
@@ -39,11 +40,11 @@ public class SkillsController {
     }
     
    
-    @PutMapping("/skill/edita/{idskills}")
+    @PutMapping("/skill/edita/{idskills1}")
    // public Skills editask (@PathVariable("id") Long id,@RequestParam ("skill") String nuevoskill) {
-     public ResponseEntity<Skills> editask (@PathVariable("idskills") Long idskills,@RequestBody Skills nuevoskill) {
+     public ResponseEntity<Skills> editask (@PathVariable Long idskills1,@RequestBody Skills nuevoskill) {
          
-     Optional<Skills> upita= skrepo.findById(idskills);
+     Optional<Skills> upita= skrepo.findById(idskills1);
     
    //    updates.setSkill(nuevoskill.getSkill());
    //    updates.setPorcentaje(nuevoskill.getPorcentaje());
